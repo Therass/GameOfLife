@@ -17,11 +17,14 @@ public class LifeManagerTest {
     LifeManager lifeManager;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         propertiesReader = new PropertiesReader();
-        propertiesHolder = new PropertiesHolder();
-        propertiesReader.setPropertiesToHolder(propertiesHolder);
+        propertiesHolder = new PropertiesHolder(
+                propertiesReader.returnWidthProperty(),
+                propertiesReader.returnHeightProperty(),
+                propertiesReader.returnInitAliveCountProperty());
+
 
         lifeManager = new LifeManager(propertiesHolder);
 

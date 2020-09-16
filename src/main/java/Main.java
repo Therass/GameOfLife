@@ -5,17 +5,17 @@ import threads.LifeTakerThread;
 import util.Drawer;
 import util.PropertiesReader;
 
-import java.io.IOException;
 import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
 
-        PropertiesHolder propertiesHolder = new PropertiesHolder();
         PropertiesReader propertiesReader = new PropertiesReader();
-//TODO: refactor with final
-        propertiesReader.setPropertiesToHolder(propertiesHolder);
+        PropertiesHolder propertiesHolder = new PropertiesHolder(
+                propertiesReader.returnWidthProperty(),
+                propertiesReader.returnHeightProperty(),
+                propertiesReader.returnInitAliveCountProperty());
 
         LifeManager lifeManager = new LifeManager(propertiesHolder);
 
@@ -25,6 +25,8 @@ public class Main {
 
         Drawer drawer = new Drawer();
         drawer.drawLifeList(lifeManager, propertiesHolder);
+
+
 
         //System.out.println("");
 

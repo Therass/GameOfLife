@@ -1,26 +1,23 @@
 package util;
 
-import dataHandlers.PropertiesHolder;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertiesReader {
 
-    public void setPropertiesToHolder(PropertiesHolder propertiesHolder) {
+    Properties properties;
+
+    public PropertiesReader() {
 
         try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("properties.properties")) {
 
-            Properties properties = new Properties();
+            properties = new Properties();
 
             properties.load(inputStream);
 
-            propertiesHolder.setWidth(Integer.parseInt(properties.getProperty("width")));
-            propertiesHolder.setHeight(Integer.parseInt(properties.getProperty("height")));
-            propertiesHolder.setInitAliveCount(Integer.parseInt(properties.getProperty("initAliveCount")));
 
-            if ((propertiesHolder.getWidth() * propertiesHolder.getHeight()) < propertiesHolder.getInitAliveCount()) {
+            if ((Integer.parseInt(properties.getProperty("width")) * Integer.parseInt(properties.getProperty("height"))) < Integer.parseInt(properties.getProperty("initAliveCount"))) {
                 throw new Exception("Initial alive count is more than height multiply by width");
             }
 
@@ -30,6 +27,17 @@ public class PropertiesReader {
 
             e.printStackTrace();
         }
+    }
 
+    public int returnWidthProperty(){
+        return Integer.parseInt(properties.getProperty("width"));
+    }
+
+    public int returnHeightProperty(){
+        return Integer.parseInt(properties.getProperty("height"));
+    }
+
+    public int returnInitAliveCountProperty(){
+        return Integer.parseInt(properties.getProperty("initAliveCount"));
     }
 }

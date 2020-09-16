@@ -2,32 +2,26 @@ package dataHandlers;
 
 public class PropertiesHolder {
 
-    private int width;
-    private int height;
-    private int initAliveCount;
+    private final int width;
+    private final int height;
+    private final int initAliveCount;
 
+    public PropertiesHolder(int width, int height, int initAliveCount) {
+        this.width = width;
+        this.height = height;
+        this.initAliveCount = initAliveCount;
+    }
 
     public int getWidth() {
         return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
     }
 
     public int getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
     public int getInitAliveCount() {
         return initAliveCount;
     }
 
-    public void setInitAliveCount(int initAliveCount) {
-        this.initAliveCount = initAliveCount;
-    }
 }
