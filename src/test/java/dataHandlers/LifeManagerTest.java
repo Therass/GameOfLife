@@ -11,11 +11,11 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class LifeManagerTest {
-
+//TODO private everywhere ,even in tests , there must be a reason to use more width access
     PropertiesHolder propertiesHolder;
     PropertiesReader propertiesReader;
     LifeManager lifeManager;
-
+//TODO do you need to run this before each test? @BeforeClass can set up values 1 time
     @Before
     public void setUp() {
 
@@ -33,7 +33,7 @@ public class LifeManagerTest {
 
     }
 
-
+//TODO awesome test :) assert that true is true
     @Test
     public void setXYValue() {
 
@@ -90,7 +90,7 @@ public class LifeManagerTest {
             }
         }
     }
-
+//TODO awesome test :) assert that true is true
     @Test
     public void getFullLIst() {
 

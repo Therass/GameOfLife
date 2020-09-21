@@ -19,6 +19,7 @@ public class LifeTakerThread {
 
         for (int y = 0; y < propertiesHolder.getHeight(); y++) {
 
+//         /TODO   lifeManager.getXYValue() return boolean , why do you compare it with another boolean? you can use it as it is
             for (int x = 0; x < propertiesHolder.getWidth(); x++) {
                 if (lifeManager.getXYValue(x, y) == true) {
                     returnList.get(y).set(x, true);

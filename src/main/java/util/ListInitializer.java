@@ -11,13 +11,14 @@ public class ListInitializer {
     public void initListSize(List<List<Boolean>> list, PropertiesHolder propertiesHolder) {
 
         for (int y = 0; y < propertiesHolder.getHeight(); y++) {
+//TODO you may ser list initial capacity if you know it, but not necessary
             list.add(y, new ArrayList<Boolean>());
             for (int x = 0; x < propertiesHolder.getWidth(); x++) {
                 list.get(y).add(x, new Boolean(false));
             }
         }
     }
-
+//TODO what this method doing? Name not clear
     public void initRandXYValues(List<List<Boolean>> list, PropertiesHolder propertiesHolder) {
 
         Random rand = new Random();

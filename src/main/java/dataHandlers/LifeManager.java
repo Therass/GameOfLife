@@ -1,3 +1,4 @@
+//TODO package naming not according naming convention
 package dataHandlers;
 
 import util.ListInitializer;
@@ -7,6 +8,7 @@ import java.util.List;
 
 public class LifeManager {
 
+//    TODO codestyle , read about variables order, it's depends on how you initialize them, current order incorrect
     //Y holder of X-es
     private List<List<Boolean>> TwoDimensionListOfAlive = new ArrayList<List<Boolean>>();
     private PropertiesHolder propertiesHolder;
@@ -35,7 +37,7 @@ public class LifeManager {
         int count = 0;
         for (int yLoop = 0; yLoop < propertiesHolder.getHeight(); yLoop++) {
             for (int xLoop = 0; xLoop < propertiesHolder.getWidth(); xLoop++) {
-
+//TODO this look like a mess, code reducing make this really hard to read, not necessary make code short, make it readable
                 if ((x - 1 == xLoop) & (y - 1 == yLoop)) if (getXYValue(xLoop, yLoop)) count++;
                 if ((x - 1 == xLoop) & (y == yLoop)) if (getXYValue(xLoop, yLoop)) count++;
                 if ((x - 1 == xLoop) & (y + 1 == yLoop)) if (getXYValue(xLoop, yLoop)) count++;

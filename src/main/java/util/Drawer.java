@@ -12,6 +12,7 @@ public class Drawer {
         for (int y = (propertiesHolder.getHeight() - 1); y >= 0; y--) {
             for (int x = 0; x < propertiesHolder.getWidth(); x++) {
                 if (lifeManager.getXYValue(x, y)) {
+//                   TODO this is "magic" variable, move it to class variable and give a name
                     System.out.print("\u25A0");
                 } else System.out.print("\u25A1");
             }

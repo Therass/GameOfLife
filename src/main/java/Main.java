@@ -10,7 +10,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-
+//        TODO this can be not in the main class, but if you want it here use separate methods
         PropertiesReader propertiesReader = new PropertiesReader();
         PropertiesHolder propertiesHolder = new PropertiesHolder(
                 propertiesReader.returnWidthProperty(),
@@ -43,6 +43,7 @@ public class Main {
 //
         //     drawer.drawList(lifeTakerThread.takeLive(lifeManager, propertiesHolder), propertiesHolder);
 
+//        TODO this can be not in the main class, but if you want it here use separate methods
         while (true) {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n");
             Thread.sleep(1);
